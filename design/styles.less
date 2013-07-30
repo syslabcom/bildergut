@@ -1,0 +1,446 @@
+/* Bildergut Less file */
+
+/* declarations */
+@mainfont: Verdana, Arial, Helvetica, sans-serif;
+@mainfontsize: 14px;
+@mainfontcolor: black;
+@background: white;
+@linkhighlight: #b1b2b2;
+@screenwidth: 1024px;
+@screenheight: 768px;
+@infobox-offset: 394px;
+@infobox-height: 200px;
+
+/* styles */
+html {
+    height:100%;
+    margin:0;
+}
+body {
+	font-family:@mainfont;
+	font-size: @mainfontsize;
+	color: @mainfontcolor;
+	background-color: @background;
+	margin: 36px;
+	padding:0;
+}
+body.mainpage {
+    height:100%;
+    margin:0;
+    overflow: hidden;
+	#content {
+	    clear: left;
+		position: relative;
+	    width: @screenwidth; 
+	    height: @screenheight;
+		margin: 0 auto;
+		padding:0;
+	}
+	#top {
+		float: left;
+		width: 1px; height: 50%;
+		margin-bottom: -384px;
+	}
+}
+
+body.dashboard {
+	#content {
+		/*width: 100%;*/
+	}
+	.controls {
+		background-color:#000; width:188px;height:160px; cursor:pointer; color: white; 
+		.projecttitle {
+			margin:0; padding-left:7px; padding-top:7px; color:#FFF; font-size:12px; width:188px;
+		}
+	}
+	.fadePictures {
+		width:188px;height:160px;
+	}
+}
+a {
+	color: @mainfontcolor;	
+	text-decoration:none;
+	&:link {color: @mainfontcolor;}
+	&:visited {color: @mainfontcolor;}
+	&:active {color: @mainfontcolor;}
+	&:hover {color: @linkhighlight;}
+	
+}
+
+#content p img {
+    margin-bottom:10px;
+}
+
+#project-description {
+	margin-top: 10px;
+	font-size: 12px;
+}
+
+#slideshow {
+	padding:0;
+	margin:0;
+	width:@screenwidth;
+	height: @screenheight;
+	img {
+		margin:0;
+		padding:0;
+		list-style: none;
+		width:@screenwidth;
+		height: @screenheight;
+		display:block;
+		z-index:50;
+		position:absolute;
+		.current {
+			z-index: 51;
+		}
+	}
+}
+
+
+
+#infobox {
+	background-color: @background;
+	border-right: 1px solid black;
+	z-index: 60;
+	display:none;
+	position:absolute;
+	top:@infobox-offset;
+	width: @screenwidth - 41;
+	height: @infobox-height;
+	div {
+		float:left;
+		width: 280px;
+		padding:35px 0 0 40px;
+	}
+	#address {
+                height: 140px;
+		background: url("images/head_white1.png") no-repeat scroll 40px 20px white;
+		padding: 70px 0 0 40px;
+	}
+}
+
+#controls {
+	background-color: @background;
+	z-index: 70;
+	position:relative;
+	top:300px;
+	left:984px;
+	width:40px;
+	height: @infobox-height;
+	p {
+		padding:0;
+		margin:0;
+		text-align:center;
+		display: block;
+		/*border-top:1px solid black;*/
+	}
+	#enter {
+		padding: 36px 0;
+		border-top: 0px solid black;
+		text-transform: uppercase;
+		font-size:10px;
+	}
+	#backarrow, #forwardarrow, #info {
+		height: 40px;
+		cursor: pointer;
+		img {
+			height:40px;
+			width: 40px;
+		}
+	}
+	#backarrow img:hover {
+	 background: transparent url(images/prozesspfeilr2_hover.png) no-repeat scroll 0 0;
+	}
+	#forwardarrow img:hover {
+	 background: transparent url(images/prozesspfeill2_hover.png) no-repeat scroll 0 0;
+	}
+}
+
+#header {
+    background:url("images/head_white1.png") no-repeat scroll 0 0 white;
+    width: 100%; 
+	ul {
+        list-style-type: none; 
+        margin: 0; 
+        padding: 0px 0 0 0; 
+        font-size: 10px; 
+		li {
+			a {
+    		    display:block;
+	    	    height:12px;
+				i {
+			    	display:none;
+				}
+			}
+		}
+                li#logo {
+                        a {
+                             height: 50px;
+                             width: 160px;
+                             display: block;
+                        }
+               }
+		li.backlink {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+	
+	}
+}
+.projectname { 
+	display:none; 
+	height: 160px; 
+	cursor:pointer;
+        float:left;
+	z-index:101;
+	margin-bottom: 5px;
+	background: black;
+	color: white;
+        position:relative;
+}
+.projectname p {
+ 	padding-left: 10px;
+}
+.project {
+    cursor:pointer;
+    float:left;
+	height: 160px;
+	margin-bottom: 5px;
+}
+.detailimg { 
+    cursor:pointer;
+    white-space: nowrap;
+}
+.projectinfo {
+
+}
+#galleryview {
+    height:500px; 
+    margin-top:18px; 
+    width:auto; 
+    white-space:nowrap; 
+    cursor:pointer;
+    img {
+        margin:0px; 
+        padding:0px;
+    }
+}
+#galleryswitcher {
+    margin-top:18px; 
+    position:fixed;
+}
+
+#galleryheadline {
+    margin-top:18px; 
+    position:fixed; 
+    margin-bottom: 10px; 
+    margin-top: 20px; 
+    color: grey;
+}
+
+#galleryview_switcher {
+    height:500px; 
+    width:auto; 
+    white-space:nowrap; 
+    cursor:pointer; 
+    margin-top: 40px;
+    img {
+        margin:0px; 
+        padding:0px;
+    }
+}
+
+.numbers ul {
+    list-style-type:none; 
+    display:inline;
+    .arrow {
+        bottom: 4px;
+        float: left;
+        position: relative;
+        right: 35px;
+        width: 75px;
+        li a img {
+            margin:0px; 
+            padding:0px;
+        }
+    }
+}
+
+/* fader detail view */
+#fader {
+  width: 640px;
+  /*height: 480px;*/
+  height: 500px;
+  position: relative; 
+  img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 50; 
+  }
+  img.current {
+    z-index: 51; 
+  }
+}
+#thumbs {
+  height: 54px;
+  padding: 13px 0; 
+  img {
+    float: left;
+    margin: 0 13px 0 0;
+    border-bottom: 10px solid #FFF;
+    cursor: pointer; 
+  }
+  img.current-thumb {
+    border-bottom: 10px #ccc solid; 
+  }
+}
+.hidden { display:none;}
+
+
+
+/* End fader detail view */
+
+
+#subtitle1 {
+    margin-top:18px; 
+    position:fixed; 
+    color: grey;
+}
+#subtitle2 {
+    margin-top:36px; 
+    position:fixed; 
+    color: grey; 
+}
+#subtitle3 {
+    margin-top:70px; 
+    position:fixed; 
+    color: grey;
+}
+#subtitle4 {
+    margin-top:88px; 
+    position:fixed; 
+    color: grey;
+}
+#subtitle5 {
+    margin-top:106px; 
+    position:fixed; 
+    color: grey;
+}
+.visualClear {
+	clear: both;
+}
+#logo-index {
+    background: url("images/BG_Logo_White_index.png") no-repeat scroll 40px 20px transparent;
+    height: 94px;
+    position: relative;
+    top: 390px;
+    width: 210px;
+    z-index: 50;
+}
+
+
+
+
+
+
+
+body.mainpage2 #controls p {
+    font-family: Verdana !important;
+    font-size: 12px !important;
+}
+body.mainpage2 #controls #info {
+    color: #1A1A1A;
+    border-top: 0 solid black;
+    padding: 36px 0;
+}
+body.mainpage2 #controls {
+    height: 216px;
+    left: 970px;
+    position: relative;
+    top: 185px;
+    width: 54px;
+}
+body.mainpage2 #logo-index {
+    background: url("images/BG_Logo_White_index_Kopie.png") no-repeat scroll 23px 13px transparent;
+    height: 94px;
+    position: relative;
+    top: 339px;
+    width: 276px;
+    z-index: 50;
+}
+body.mainpage2 #infobox #address {
+    background: url("images/head_white1_Kopie.png") no-repeat scroll 23px 73px white;
+    font-size: 11px;
+    padding: 66px 0 0 275px;
+}
+body.mainpage2 #infobox {
+    height: 216px;
+    position: absolute;
+    top: 279px;
+    width: 969px;
+}
+body.mainpage2 #infobox div {
+    float: left;
+    padding: 25px 0 0 65px;
+    width: 280px;
+}
+body.mainpage2 #controls #enter {
+    border-bottom: 1px solid #1A1A1A;
+    color: #1A1A1A;
+    padding: 18px 0 20px;
+}
+body.mainpage2 #controls #info {
+    background: none repeat scroll 0 0 white;
+    border-top: 1px solid #1A1A1A;
+    bottom: 2px;
+    color: #1A1A1A;
+    padding: 0;
+    position: relative;
+    text-transform: uppercase;
+}
+body.mainpage2 #controls #info a {
+    position: relative;
+    top: 19px;
+}
+body.mainpage2 a:link {
+    color: #1A1A1A;
+}
+#controls p {
+    padding: 0;
+}
+#counter {
+    height:18px;
+    padding:4px 0 0 0;
+}
+#counter a {
+    position: relative;
+    top: 5px;
+}
+#disclaimer {
+    float: right !important;
+    font-size: 10px;
+    padding: 25px 0 0 0 !important;
+    width: 325px !important;
+}
+#people {
+    clear: right;
+    font-size: 11px;
+    padding: 41px 0 0 !important;
+    text-align: center;
+    text-transform: uppercase;
+}
+#controls #backarrow, #controls #forwardarrow {
+    padding:0px;
+}
+#controls #forwardarrow {
+    bottom: 3px;
+    position: relative;
+}
+#controls #backarrow img:hover{background:transparent url(images/prozesspfeill2_hover.png) no-repeat scroll 0 0;}
+#controls #forwardarrow img:hover{background:transparent url(images/prozesspfeilr2_hover.png) no-repeat scroll 0 0;}
+
+body.mainpage2 a:hover {
+    background:#807f7f;
+}

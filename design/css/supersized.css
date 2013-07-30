@@ -1,0 +1,98 @@
+/*
+
+	Supersized - Fullscreen Slideshow jQuery Plugin
+	Version : 3.2.4
+	Site	: www.buildinternet.com/project/supersized
+	
+	Author	: Sam Dunn
+	Company : One Mighty Roar (www.onemightyroar.com)
+	License : MIT License / GPL License
+	
+*/
+
+* { margin:0; padding:0; }
+body { background:#111; height:100%; }
+	img { border:none; }
+	
+	#supersized-loader { position:absolute; top:50%; left:50%; z-index:0; width:60px; height:60px; margin:-30px 0 0 -30px; text-indent:-999em; background:url(../img/progress.gif) no-repeat center center;}
+	
+	#supersized {  display:block; position:fixed; left:0; top:0; overflow:hidden; z-index:-999; height:100%; width:100%; }
+		#supersized img { width:auto; height:auto; position:relative; display:none; outline:none; border:none; }
+			#supersized.speed img { -ms-interpolation-mode:nearest-neighbor; image-rendering: -moz-crisp-edges; }	
+			#supersized.quality img { -ms-interpolation-mode:bicubic; image-rendering: optimizeQuality; }			
+		
+		#supersized li { display:block; list-style:none; z-index:-30; position:fixed; overflow:hidden; top:0; left:0; width:100%; height:100%; background:#111; }
+		#supersized a { width:100%; height:100%; display:block; }
+			#supersized li.prevslide { z-index:-20; }
+			#supersized li.activeslide { z-index:-10; }
+			#supersized li.image-loading { background:#111 url(../img/progress.gif) no-repeat center center; width:100%; height:100%; }
+				#supersized li.image-loading img{ visibility:hidden; }
+			#supersized li.prevslide img, #supersized li.activeslide img{ display:inline; }
+			
+/*  own styles */
+
+#controlsbox { position:absolute; height:216px; width:54px; 
+    top:279px; 
+    right: 0px; 
+ background-color: white; 
+    font-family: Verdana;
+    font-size: 12px; color: #1A1A1A;
+    text-align:center; text-transform:uppercase;}
+#controlsbox a { text-decoration:none;}
+#controlsbox #enter {
+    border-bottom: 1px solid #1A1A1A;
+    padding: 18px 0 20px;
+}
+#controlsbox #info {
+    border-top: 1px solid #1A1A1A;
+    padding: 18px 0 20px;    
+}
+#controlsbox a:link {
+    color: #1A1A1A;
+}
+#controlsbox:hover { cursor:pointer; }
+
+#infobox {
+    font-family: Verdana;
+    font-size: 12px;
+	background-color: white;
+	border-right: 1px solid black;
+	display:none;
+	position:absolute;
+/*	margin-top:-101px;*/
+	top:279px;
+	width: 100%;
+	height: 216px;
+	z-index:-40;
+}
+#infobox div {
+	float:left;
+	width: 280px;
+	padding:35px 0 0 40px;
+}
+#infobox #counter {
+}
+#infobox p {
+    margin-bottom:11px;
+    }
+#infobox #address {
+    background: url("/_design/images/head_white1_Kopie.png") no-repeat scroll 23px 73px white;
+    font-size: 11px;
+    padding: 66px 0 0 275px;
+}
+#logo-index {
+    background: url("/_design/images/BG_Logo_White_index_Kopie.png") no-repeat scroll 23px 13px transparent;
+    height: 94px;
+    position: absolute;
+    top:339px;
+    width: 276px;
+    z-index: -60;
+}
+
+#contentelems {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+#controlelems .ui-effects-wrapper { height: 216px;}
+.borderleft { border-left: 1px solid #1A1A1A; }

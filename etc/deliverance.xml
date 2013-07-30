@@ -1,0 +1,93 @@
+<ruleset>
+
+  <server-settings>
+    <server>localhost:3008</server>
+    <execute-pyref>true</execute-pyref>
+    <dev-allow>127.0.0.1 93.233.91.147</dev-allow>
+    <dev-htpasswd>deliv-users.htpasswd</dev-htpasswd>
+  </server-settings>
+
+  <proxy path="/_design">
+    <dest href="{here}/../design" />
+  </proxy>
+
+  <proxy path="regex:.*/main(/$|$)"
+         strip-script-name="0" keep-host="1" class=" dashboard main global">
+      <dest href="http://localhost:3080" />
+    <!--response rewrite-links="1" /-->
+  </proxy>
+  <proxy path="regex:.*/main/.+"
+         strip-script-name="0" keep-host="1" class="page global">
+      <dest href="http://localhost:3080" />
+    <response rewrite-links="1" />
+  </proxy>
+
+
+  <proxy path="regex:.*/sideprojects(/$|$)"
+         strip-script-name="0" keep-host="1" class="dashboard sideprojects global">
+      <dest href="http://localhost:3080" />
+    <response rewrite-links="1" />
+  </proxy>
+  <proxy path="regex:.*/sideprojects/.+"
+         strip-script-name="0" keep-host="1" class="page global">
+      <dest href="http://localhost:3080" />
+    <response rewrite-links="1" />
+  </proxy>
+
+
+  <proxy path="regex:.*/about"
+         strip-script-name="0" keep-host="1" class="page global">
+      <dest href="http://localhost:3080" />
+    <response rewrite-links="1" />
+  </proxy>
+
+  <proxy path="regex:.*/contact"
+         strip-script-name="0" keep-host="1" class="page global">
+      <dest href="http://localhost:3080" />
+    <response rewrite-links="1" />
+  </proxy>
+
+  <proxy path="regex:/($|index.*|bildergut|.*VirtualHostRoot/)" class="default global teaser">
+    <dest href="http://localhost:3080" />
+    <!--response rewrite-links="1" /-->
+  </proxy>
+
+<!-- ######################## -->
+
+  <rule class="dashboard" suppress-standard="true">
+	<replace content="children:#content-core" theme="children:#content" /> 
+  </rule>
+
+  <rule class="main" suppress-standard="true">
+	<theme href="/_design/dashboard.html" />
+  </rule>
+
+  <rule class="sideprojects" suppress-standard="true">
+	<theme href="/_design/dashboard.html" />
+  </rule>
+
+  <rule class="page" suppress-standard="true">
+	<theme href="/_design/page.html" />
+	<replace content="children:#content-core" theme="children:#content" /> 
+  </rule>
+
+  <rule class="teaser" suppress-standard="true">
+    <replace content="children:#jscontent" theme="children:#slidecontent" />
+  </rule>
+
+  <rule class="default" suppress-standard="true">
+	<theme href="/_design/index.html" />
+    <replace content="attributes:#siteaction-mainpage a" theme="attributes:#enter a" />
+  </rule>
+
+
+  <rule class="global" suppress-standard="true">
+    <append content="children:#portal-globalnav" theme="children:#navigation" />
+    <append content="children:#backlink" theme="children:#navigation" />
+
+    <drop content="elements:/html/head/link" />
+    <drop content="elements:/html/head/script" />
+    <drop content="elements:/html/head/style" />
+  </rule>
+
+</ruleset>

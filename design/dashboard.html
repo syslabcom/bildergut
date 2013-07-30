@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>BILDERGUT Image Processing</title>
+    <meta name="Keywords" content="Gerd Pottendorfer Bildergut Bildbearbeitung Fashion Bildnachbearbeitung" />
+    <meta name="Description" content="Gerd Pottendorfer Bildergut Online Portfolio" />
+    <meta name="author" content="Gerd Pottendorfer" />
+    <meta name="ROBOTS" content="INDEX, FOLLOW" />
+
+    <link rel="stylesheet" type="text/css" media="screen,projection" href="styles.css"/>
+
+    <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+    <script type="text/javascript">
+
+function showme(id) {
+	$('#'+id).hide();
+	$('.f_'+id).show();
+}
+function hideme(id) {
+	$("#content .projectname").hide();
+	$("#content .project").show();
+}
+
+$(document).ready(function() {
+	$("#content .project").each(function(index) {
+		$(this).cycle({ 
+			fx:    'fade', 
+			requeueTimeout: 2500,
+			speed:  1000,
+			delay: 0,
+			height:160,
+			timeout: (Math.random()*10000) + 3000
+ 		});
+	});
+
+});
+    </script>
+  </head>
+  <body class="dashboard">
+    <div id="header">
+      <ul id="navigation">
+        <li id="logo"><a href="/" title="Back to home"></a></li>
+      </ul>
+      <p id="backlink"></p>
+    </div>
+
+    <div id="content">
+
+    <div style="clear:both;"></div>
+
+    </div>
+    <div style="clear:both;"></div>
+    <div style="margin-top:30px;"><a href="#" target="_blank"><img src="images/facebook_button_white.jpg" width="30" height="30" alt="facebook" /></a></div>
+
+  </body>
+</html>
