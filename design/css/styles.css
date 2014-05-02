@@ -42,7 +42,7 @@ ul.project{cursor:pointer;}
 #subtitle4{margin-top:88px;position:fixed;color:grey;}
 #subtitle5{margin-top:106px;position:fixed;color:grey;}
 .visualClear{clear:both;}
-#logo-index{background:url("images/BG_Logo_White_index.png") no-repeat scroll 40px 20px transparent;height:94px;position:relative;top:390px;width:210px;z-index:50;}
+#logo-index{/*background:url("images/BG_Logo_White_index.png") no-repeat scroll 40px 20px transparent*/;height:94px;position:relative;top:390px;width:210px;z-index:50;}
 body.mainpage2 #controls p{font-family:Verdana !important;font-size:12px !important;}
 body.mainpage2 #controls #enter{color:#1A1A1A;}
 body.mainpage2 #controls #info{color:#1A1A1A;border-top:0 solid black;padding:36px 0;}
