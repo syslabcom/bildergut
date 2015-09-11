@@ -34,6 +34,11 @@
     <response rewrite-links="1" />
   </proxy>
 
+  <proxy path="regex:.*/clients"
+         strip-script-name="0" keep-host="1" class="page global">
+      <dest href="http://localhost:3080" />
+    <response rewrite-links="1" />
+  </proxy>
 
   <proxy path="regex:.*/about"
          strip-script-name="0" keep-host="1" class="page global">
